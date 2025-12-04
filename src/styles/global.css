@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Montserrat", sans-serif; /* Moderna y geométrica */
+
+  /* PALETA CD ABOGADOS (Violeta Moderno) */
+  --color-brand-dark: #2e1065; /* Violet 950 - Uva Profundo */
+  --color-brand-primary: #5b21b6; /* Violet 800 - Institucional */
+  
+  --color-accent: #7c3aed; /* Violet 600 - Vibrante para acción */
+  --color-accent-hover: #6d28d9;
+  
+  --color-bg-light: #f5f3ff; /* Violet 50 - Fondo muy suave */
+}

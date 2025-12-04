@@ -1,0 +1,78 @@
+---
+// src/components/Navbar.astro (CD Abogados - Violeta)
+---
+
+<header class="fixed w-full z-50 font-sans shadow-lg">
+    
+    <div class="bg-brand-dark text-violet-200 text-[10px] tracking-widest uppercase py-2 border-b border-white/10 relative z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <span class="flex items-center gap-2 font-bold text-white">
+                <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
+                Estudio Jurídico Integral • CABA
+            </span>
+            <div class="hidden md:flex gap-6 opacity-90 font-medium">
+                <a href="mailto:contacto@cdabogados.com.ar" class="hover:text-white transition-colors">contacto@cdabogados.com.ar</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-white/95 backdrop-blur-xl border-b border-violet-100 relative z-40">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-brand-dark text-white rounded-lg flex items-center justify-center font-serif font-black text-xl shadow-lg group-hover:bg-accent transition-colors">
+                    CD
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold text-brand-dark tracking-tight leading-none group-hover:text-accent transition-colors">
+                        ABOGADOS
+                    </span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8 text-xs font-bold text-brand-dark uppercase tracking-widest">
+                <a href="#laboral" class="hover:text-accent transition-colors">Laboral</a>
+                <a href="#civil" class="hover:text-accent transition-colors">Civil</a>
+                <a href="#consumidor" class="hover:text-accent transition-colors">Consumidor</a>
+                
+                <a href="https://wa.me/54911XXXXXXXX" target="_blank" class="bg-brand-dark text-white px-6 py-2.5 rounded-full hover:bg-accent transition-all shadow-lg shadow-violet-900/20 hover:-translate-y-0.5">
+                    Consulta WhatsApp
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden text-brand-dark focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white border-t border-violet-100 shadow-xl overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 z-40">
+                <div class="flex flex-col p-8 space-y-6 text-center">
+                    <a href="#laboral" class="mobile-link block text-sm font-bold uppercase tracking-widest text-brand-dark hover:text-accent py-3 border-b border-slate-50">Laboral</a>
+                    <a href="#civil" class="mobile-link block text-sm font-bold uppercase tracking-widest text-brand-dark hover:text-accent py-3 border-b border-slate-50">Civil & Familia</a>
+                    <a href="#consumidor" class="mobile-link block text-sm font-bold uppercase tracking-widest text-brand-dark hover:text-accent py-3 border-b border-slate-50">Consumidor</a>
+                    <div class="pt-4">
+                        <a href="https://wa.me/54911XXXXXXXX" class="block w-full bg-accent text-white px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-dark transition-colors rounded-full shadow-lg">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    let isOpen = false;
+    if(btn && menu) {
+        btn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if(isOpen) {
+                menu.classList.remove('max-h-0', 'opacity-0');
+                menu.classList.add('max-h-screen', 'opacity-100');
+            } else {
+                menu.classList.add('max-h-0', 'opacity-0');
+                menu.classList.remove('max-h-screen', 'opacity-100');
+            }
+        });
+    }
+</script>
